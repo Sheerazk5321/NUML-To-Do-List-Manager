@@ -1,0 +1,515 @@
+/* =========================================
+   NUML PRO THEME - VARIABLES
+   ========================================= */
+:root {
+    --numl-navy: #002a5c;       /* Official Navy */
+    --numl-gold: #e6b800;       /* Official Gold */
+    --numl-cyan: #00aeff;       /* Official Cyan */
+    --bg-light: #f4f6f9;        /* Light Grey Background */
+    --white: #ffffff;
+    --shadow: 0 8px 30px rgba(0, 42, 92, 0.1); /* Soft Navy Shadow */
+}
+
+/* General Reset */
+body {
+    font-family: 'Poppins', sans-serif; /* Professional Font */
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* =========================================
+   HEADER STYLING
+   ========================================= */
+header {
+    background: linear-gradient(90deg, var(--numl-navy) 0%, #004080 100%); /* Subtle Gradient */
+    border-bottom: 4px solid var(--numl-gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 0;
+}
+
+nav {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links span {
+    font-weight: 300;
+    margin-right: 15px;
+    opacity: 0.9;
+}
+
+.nav-links a {
+    background: rgba(255,255,255,0.15);
+    padding: 8px 18px;
+    border-radius: 20px; /* Pill shape button */
+    text-decoration: none;
+    color: var(--numl-gold) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: var(--numl-gold);
+    color: var(--numl-navy) !important;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   DASHBOARD GRID LAYOUT
+   ========================================= */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 350px 1fr; /* Left Sidebar | Right Content */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+/* LEFT PANEL: Add Task Form */
+.form-panel {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow); /* Deep shadow adds "pop" */
+    border-top: 6px solid var(--numl-navy);
+    height: fit-content;
+}
+
+.form-panel h3 {
+    margin-top: 0;
+    color: var(--numl-navy);
+    font-size: 1.4rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* INPUT FIELDS STYLING */
+.styled-form label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.styled-form input, 
+.styled-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e5ee;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+/* The Glow Effect on Click */
+.styled-form input:focus, 
+.styled-form textarea:focus {
+    border-color: var(--numl-cyan);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 174, 255, 0.1);
+    outline: none;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--numl-navy);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%; /* Full width on mobile/sidebar */
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: var(--numl-cyan);
+    box-shadow: 0 4px 12px rgba(0, 174, 255, 0.3);
+}
+
+/* =========================================
+   RIGHT PANEL: Table & Search
+   ========================================= */
+.controls-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px; /* Rounded Search Bar */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#statusFilter {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+/* TABLE STYLING */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden; /* Clips the corners */
+    box-shadow: var(--shadow);
+    background: white;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-table th {
+    background-color: var(--numl-navy);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.task-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+/* Row Hover Effect */
+.task-table tr:hover {
+    background-color: #f8fbff; /* Very light blue on hover */
+}
+
+/* STATUS BADGES */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.pending { background: #fff8e1; color: #b38f00; border: 1px solid #ffeeba; }
+.badge.completed { background: #e0f7fa; color: #006064; border: 1px solid #b2ebf2; }
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 900px) {
+    .dashboard-container { grid-template-columns: 1fr; }
+    
+    /* On mobile, form becomes a modal popup */
+    .form-panel {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 400px;
+        z-index: 1000;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+    .form-panel.active { display: block; }
+
+    /* The floating + button */
+    #mobileAddBtn { display: block; }
+}
+
+/* Floating Action Button (FAB) for Mobile */
+#mobileAddBtn {
+    display: none;
+    position: fixed;
+    bottom: 25px; right: 25px;
+    width: 60px; height: 60px;
+    background: var(--numl-navy);
+    color: var(--numl-gold);
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    box-shadow: 0 10px 25px rgba(0, 42, 92, 0.4);
+    cursor: pointer;
+    z-index: 2000;
+    transition: transform 0.2s;
+}
+#mobileAddBtn:active { transform: scale(0.9); }
+
+/* =========================================
+   FIX: CLOSE BUTTON VISIBILITY
+   ========================================= */
+
+/* 1. Hide the Close Button by default (Desktop View) */
+.close-btn {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--numl-navy);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--danger-red);
+}
+
+/* 2. Show it ONLY on Mobile Devices */
+@media (max-width: 900px) {
+    /* Make the header a flex container so Title and X align nicely */
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Remove the default margin from h3 so it aligns with the button */
+    .form-panel h3 {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    /* Show the button */
+    .close-btn {
+        display: block;
+    }
+}
+
+/* =========================================
+   NEW PRO AUTH PAGE STYLES
+   ========================================= */
+
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 42, 92, 0.15); /* Stronger Navy Shadow */
+    border-top: 6px solid var(--numl-cyan);
+    text-align: left; /* Reset center alignment for cleaner form look */
+}
+
+/* Subtle Animation: Card slides up when page loads */
+.animated-card {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h2 {
+    color: var(--numl-navy);
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.auth-header p {
+    color: #777;
+    margin-top: 5px;
+    font-size: 0.95rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.auth-btn-lg {
+    padding: 14px;
+    font-size: 1.1rem;
+    border-radius: 30px; /* Pill Shape Button */
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.auth-footer a {
+    color: var(--numl-cyan);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+    color: var(--numl-navy);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS FIX
+   ========================================= */
+
+@media (max-width: 900px) {
+    
+    /* 1. Collapse Grid to Single Column */
+    .dashboard-container {
+        grid-template-columns: 1fr; /* Stack elements */
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    /* 2. Hide the "Add Task" Form Panel by default */
+    #taskFormPanel {
+        display: none; /* Hidden! */
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100vh; /* Full screen height */
+        z-index: 3000; /* Sit on top of everything */
+        border-radius: 0;
+        overflow-y: auto; /* Allow scrolling if form is long */
+        margin: 0;
+        border-top: none;
+    }
+
+    /* 3. When active (JS adds this class), Show the Form */
+    #taskFormPanel.active {
+        display: block !important;
+    }
+
+    /* 4. Show the Close 'X' Button inside the form */
+    .close-btn {
+        display: block;
+        float: right;
+        font-size: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* 5. Force the Table to scroll sideways if too wide */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    /* 6. SHOW THE (+) BUTTON */
+    #mobileAddBtn {
+        display: flex !important; /* Force it to show */
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 30px;
+        right: 25px;
+        width: 60px;
+        height: 60px;
+        background-color: var(--numl-navy);
+        color: var(--numl-gold);
+        border-radius: 50%;
+        font-size: 35px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        border: none;
+        z-index: 2000;
+        cursor: pointer;
+        padding-bottom: 5px; /* Adjust + alignment */
+    }
+
+    /* Optional: Hide less important columns on small phones */
+    .task-table th:nth-child(2), 
+    .task-table td:nth-child(2) {
+        display: none; /* Hides Due Date on very small screens */
+    }
+}
+
+/* =========================================
+   FIX: HIDE (+) BUTTON ON DESKTOP
+   ========================================= */
+
+/* 1. HIDE the button by default (For Desktop/Laptop) */
+#mobileAddBtn {
+    display: none !important;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Max Width: 900px)
+   ========================================= */
+@media (max-width: 900px) {
+    
+    /* Collapse Grid to Single Column */
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    /* Hide the Desktop Side Panel Form */
+    .form-panel {
+        display: none; 
+    }
+
+    /* Force Table Scroll */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    /* NOW Show the (+) Button ONLY on Mobile */
+    #mobileAddBtn {
+        display: flex !important; /* Make it visible here */
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 30px;
+        right: 25px;
+        width: 60px;
+        height: 60px;
+        background-color: var(--numl-navy);
+        color: var(--numl-gold);
+        border-radius: 50%;
+        font-size: 35px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        text-decoration: none; /* Remove underline since it's a link now */
+        z-index: 2000;
+        transition: transform 0.2s;
+    }
+
+    #mobileAddBtn:active {
+        transform: scale(0.9);
+    }
+}

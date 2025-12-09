@@ -1,0 +1,99 @@
+/* =========================================
+   LOGIN & REGISTER PAGE STYLES
+   ========================================= */
+
+/* Use a full-screen gradient background for auth pages */
+body.auth-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The White Card Container */
+.auth-card {
+    background: #ffffff;
+    padding: 40px;
+    width: 100%;
+    max-width: 350px; /* Keeps it nice and compact */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Input Fields Styling */
+.auth-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+    font-size: 14px;
+    transition: border-color 0.3s;
+    background-color: #f9f9f9;
+}
+
+.auth-input:focus {
+    border-color: #667eea;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Button Styling */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-btn:hover {
+    background: #5a6fd6;
+}
+
+/* Link Styling */
+.auth-link {
+    display: block;
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.auth-link a {
+    color: #667eea;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message */
+.error-msg {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ffcdd2;
+}
